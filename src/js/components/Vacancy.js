@@ -214,7 +214,6 @@ class EditVacancy extends Component {
 			alert("Заполните заголовок!");
 			return;
 		}
-		return;
 		this.props.manageVacancy({
 			id: create ? this.props.lastId+1 : this.props.id-0,//Math.random().toFixed(5).slice(2)-0,
 			title: title,

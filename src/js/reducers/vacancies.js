@@ -16,7 +16,6 @@ export default function vacancies(state=[], action) {
 
 		case 'CREATE_VACANCY':
 			state.push(payload.data);
-			console.log(state)
 			writeLocalStorage('vacancies', state);
 			break;
 	}
