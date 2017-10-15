@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, withRouter } from 'react-router';
 
-import { filterOut } from '../actions/vacancies';
+import { filterOut, toCreate } from '../actions/vacancies';
 
 class VacanciesList extends Component {
 	constructor(props) {
@@ -60,6 +60,7 @@ class VacanciesList extends Component {
 					path == '?assignee' ? this._renderVacancies() : this._renderUsers() 
 
 				}
+				<button type='button' onClick={this.props.toCreate}>Добавить вакансию</button>
 			</div>
 		);
 	}
@@ -77,7 +78,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 	return {
-		filterOut: (value) => dispatch(filterOut(value))
+		filterOut: (value) => dispatch(filterOut(value)),
+		toCreate: ()=>{dispatch(toCreate)}
 	}
 }
 
